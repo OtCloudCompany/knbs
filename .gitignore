@@ -1,0 +1,48 @@
+# Angular / Node
+/.angular/cache
+/.nx
+/node_modules
+/dist/
+/build/
+/__build__
+/__server_build__
+
+# Typings
+/typings
+/tsd_typings/
+
+# Logs
+npm-debug.log
+/npm-debug.log.*
+morgan.log
+yarn-error.log
+*.log
+
+# Unit Test / Coverage
+/coverage/
+junit.xml
+
+# IDE / Editor
+.idea
+.vscode/
+*.iml
+.DS_Store
+/nbproject/
+
+# Specific Generated Files
+*.ngfactory.ts
+*.css.shim.ts
+*.scss.shim.ts
+webpack.records.json
+
+# Local Config
+.env
+/src/mirador-viewer/config.local.js
+
+# Misc
+*.css
+.java-version
+dist.zip
+
+# Yarn (no longer used)
+yarn.lock

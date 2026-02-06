@@ -1,0 +1,61 @@
+// Add any global css for the theme here
+
+// imports the base global style
+@import '../../../styles/_global-styles.scss';
+
+:root {
+    --knbs-brown: #b06443;
+    --knbs-light-brown: #f7efec;
+}
+
+.btn-primary {
+    background-color: var(--knbs-brown) !important;
+    border-color: var(--knbs-brown) !important;
+    color: #fff !important;
+}
+
+.home-news-content {
+    background-image: url(/assets/knbs/images/hero-banner.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+div#header-navbar-wrapper {
+    border-bottom: 1px var(--knbs-brown) solid !important;
+}
+
+#header-navbar-wrapper nav {
+    background-color: var(--knbs-brown) !important;
+}
+
+#main-navbar .ds-menu-item {
+    color: white !important;
+}
+
+.home-news-content {
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #fff !important;
+    }
+
+    .container p {
+        color: #fff !important;
+    }
+}
+
+.nav-breadcrumb,
+.breadcrumb {
+    background-color: var(--knbs-light-brown) !important;
+}
+
+li.breadcrumb-item a {
+    color: #000 !important;
+}
