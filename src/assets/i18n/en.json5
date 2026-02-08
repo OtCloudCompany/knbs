@@ -2210,7 +2210,7 @@
 
   "home.title": "Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Communities in Repository",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
 
@@ -4426,9 +4426,9 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title": "DSpace Repository",
+  "repository.title": "KNBS Digital Repository",
 
-  "repository.title.prefix": "DSpace Repository :: ",
+  "repository.title.prefix": "KNBS Digital Repository :: ",
 
   "resource-policies.add.button": "Add",
 
@@ -7341,4 +7341,76 @@
   "censusreport.page.titleprefix": "Census Report",
 
   "censusreport.page.edit": "Edit this Report",
+
+  "cartographicentity.listelement.badge": "Cartographic Entity",
+
+  "cartographicentity.page.titleprefix": "Cartographic Entity",
+
+  "cartographicentity.page.edit": "Edit this Cartographic Entity",
+
+  "auditreport.listelement.badge": "Audit Report",
+
+  "auditreport.page.titleprefix": "Audit Report",
+
+  "auditreport.page.edit": "Edit this Audit Report",
+
+  "retirementscheme.listelement.badge": "Retirement Scheme",
+
+  "retirementscheme.page.titleprefix": "Retirement Scheme",
+
+  "retirementscheme.page.edit": "Edit this Retirement Scheme",
+
+  "hrdocument.listelement.badge": "HR Document",
+
+  "hrdocument.page.titleprefix": "HR Document",
+
+  "hrdocument.page.edit": "Edit this HR Document",
+
+  "hrinstrument.listelement.badge": "HR Instrument",
+
+  "hrinstrument.page.titleprefix": "HR Instrument",
+
+  "hrinstrument.page.edit": "Edit this HR Instrument",
+
+  "policydocument.listelement.badge": "Policy Document",
+
+  "policydocument.page.titleprefix": "Policy Document",
+
+  "policydocument.page.edit": "Edit this Policy Document",
+
+  "pressrelease.listelement.badge": "Press Release",
+
+  "pressrelease.page.titleprefix": "Press Release",
+
+  "pressrelease.page.edit": "Edit this Press Release",
+
+  "multimedia.listelement.badge": "Multimedia",
+
+  "multimedia.page.titleprefix": "Multimedia",
+
+  "multimedia.page.edit": "Edit this Multimedia",
+
+  "communicationmaterial.listelement.badge": "Communication Material",
+
+  "communicationmaterial.page.titleprefix": "Communication Material",
+
+  "communicationmaterial.page.edit": "Edit this Communication Material",
+
+  "statisticalreport.listelement.badge": "Statistical Report",
+
+  "statisticalreport.page.titleprefix": "Statistical Report",
+
+  "statisticalreport.page.edit": "Edit this Report",
+
+  "statisticalrelease.listelement.badge": "Statistical Release",
+
+  "statisticalrelease.page.titleprefix": "Statistical Release",
+
+  "statisticalrelease.page.edit": "Edit this Release",
+
+  "manual.listelement.badge": "Manual",
+
+  "manual.page.titleprefix": "Manual",
+
+  "manual.page.edit": "Edit this Manual",
 }

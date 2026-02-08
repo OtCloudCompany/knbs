@@ -6,16 +6,38 @@
 :root {
     --knbs-brown: #b06443;
     --knbs-light-brown: #f7efec;
+    --knbs-gray: #e9ecef;
 }
 
 .bg-light-brown {
     background-color: var(--knbs-light-brown) !important;
 }
 
+.knbs-bg-gray {
+    background-color: var(--knbs-gray) !important;
+}
+
+.knbs-text-brown {
+    color: var(--knbs-brown) !important;
+}
+
+.bg-brown {
+    background-color: var(--knbs-brown) !important;
+}
+
 .btn-primary {
     background-color: var(--knbs-brown) !important;
     border-color: var(--knbs-brown) !important;
     color: #fff !important;
+}
+
+.bg-info {
+    background-color: var(--knbs-brown) !important;
+}
+
+.dropdown-toggle,
+.submit-icon {
+    color: #000 !important;
 }
 
 .home-news-content>.container .card .row {
@@ -47,12 +69,8 @@ div#header-navbar-wrapper {
         margin-bottom: 0.5rem;
         font-weight: 500;
         line-height: 1.2;
-        // color: #fff !important;
     }
 
-    // .container p {
-    //     color: #fff !important;
-    // }
 }
 
 .nav-breadcrumb,
@@ -62,4 +80,17 @@ div#header-navbar-wrapper {
 
 li.breadcrumb-item a {
     color: #000 !important;
+}
+
+.top-level-communities a {
+    color: #000 !important;
+}
+
+.top-level-communities span a {
+    color: #fff !important;
+}
+
+.recent-items .item-list-title {
+    color: #000 !important;
+    font-weight: bold !important;
 }

@@ -1,0 +1,36 @@
+<ng-container *ngVar="(communitiesRD$ | async) as communitiesRD">
+    @if (communitiesRD?.hasSucceeded ) {
+    <div>
+        <h2>
+            {{'home.top-level-communities.head' | translate}}
+        </h2>
+        <p class="lead">{{'home.top-level-communities.help' | translate}}</p>
+        <div class="row justify-content-between" *ngIf="communitiesFetched?.length > 0">
+            <div class="col-md-2 col-sm-6 my-2 px-sm-4 d-flex" *ngFor="let community of communitiesFetched">
+                <div class="card bg-light h-100 d-flex flex-column w-100">
+                    <div class="card-body p-md-2 d-flex flex-column text-center h-100">
+                        <a routerLink="/communities/{{ community.uuid }}" class="flex-grow-1 text-decoration-none">
+                            <i class="fas fa-3x {{featuredCommunities[community.uuid] || 'fa-university'}} d-block knbs-text-brown mb-3"
+                                aria-hidden="true"></i>
+                            <p>
+                                {{ community.name }}
+                            </p>
+                        </a>
+                        <span class="badge bg-brown text-white px-2 mt-auto community-item-counts">
+                            <a routerLink="/communities/{{ community.uuid }}" class="text-white">
+                                {{ community.itemsCount }} Items
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @if (communitiesRD?.hasFailed ) {
+    <ds-error message="{{'error.top-level-communities' | translate}}"></ds-error>
+    }
+    @if (communitiesRD?.isLoading ) {
+    <ds-loading message="{{'loading.top-level-communities' | translate}}"></ds-loading>
+    }
+</ng-container>
