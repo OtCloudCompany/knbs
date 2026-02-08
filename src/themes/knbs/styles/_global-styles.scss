@@ -8,20 +8,24 @@
     --knbs-light-brown: #f7efec;
 }
 
+.bg-light-brown {
+    background-color: var(--knbs-light-brown) !important;
+}
+
 .btn-primary {
     background-color: var(--knbs-brown) !important;
     border-color: var(--knbs-brown) !important;
     color: #fff !important;
 }
 
-.home-news-content {
-    background-image: url(/assets/knbs/images/hero-banner.webp);
-    background-size: cover;
+.home-news-content>.container .card .row {
+    background-image: url("/assets/knbs/images/fair.png");
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100%;
-    width: 100%;
+
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }
 
 div#header-navbar-wrapper {
@@ -43,12 +47,12 @@ div#header-navbar-wrapper {
         margin-bottom: 0.5rem;
         font-weight: 500;
         line-height: 1.2;
-        color: #fff !important;
+        // color: #fff !important;
     }
 
-    .container p {
-        color: #fff !important;
-    }
+    // .container p {
+    //     color: #fff !important;
+    // }
 }
 
 .nav-breadcrumb,
