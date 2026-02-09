@@ -35,6 +35,12 @@
     color: #fff !important;
 }
 
+.form-login .btn-primary {
+    background-color: var(--knbs-light-brown) !important;
+    border-color: var(--knbs-light-brown) !important;
+    color: #000 !important;
+}
+
 .bg-info {
     background-color: var(--knbs-brown) !important;
 }
@@ -59,6 +65,14 @@ div#header-navbar-wrapper {
 }
 
 #header-navbar-wrapper nav {
+    background-color: var(--knbs-brown) !important;
+}
+
+#header-navbar-wrapper a i {
+    color: white !important;
+}
+
+#header-navbar-wrapper .dropdown-menu {
     background-color: var(--knbs-brown) !important;
 }
 
