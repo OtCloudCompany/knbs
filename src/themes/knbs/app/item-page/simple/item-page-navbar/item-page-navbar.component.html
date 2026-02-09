@@ -1,0 +1,36 @@
+<div class="container-fluid mx-0 px-0 knbs-bg-light-brown">
+    <div class="container p-0">
+        <nav class="navbar p-0">
+            <div class="container-fluid">
+                @if (item.firstMetadataValue('dspace.entity.type'); as type) {
+                <span class="badge bg-brown text-white">
+                    {{ type.toLowerCase() + '.page.titleprefix' | translate }}
+                </span>
+                }
+                <ul class="nav knbs-text-brown">
+                    <li class="nav-item"> <a class="nav-link text-dark">Share</a> </li>
+                    <li class="nav-item">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ handle }}" target="_blank"
+                            class="nav-link text-brown" placement="bottom" ngbTooltip="Share on Facebook">
+                            <i class="fab fa-brands fa-square-facebook fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://twitter.com/intent/tweet?text={{ title }}&url={{ handle }}" target="_blank"
+                            class="nav-link text-brown" placement="bottom" ngbTooltip="Share on Twitter">
+                            <i class="fab fa-x-twitter fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ handle }}&title={{ title }}&summary=undefined"
+                            target="_blank" class="nav-link text-brown" placement="bottom"
+                            ngbTooltip="Share on LinkedIn">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>
