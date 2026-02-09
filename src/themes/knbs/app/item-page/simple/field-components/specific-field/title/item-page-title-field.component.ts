@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ItemPageNavbarComponent } from '../../../item-page-navbar/item-page-navbar.component';
 import { ItemPageTitleFieldComponent as BaseComponent } from '../../../../../../../../app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
+import { DsoEditMenuComponent } from 'src/app/shared/dso-page/dso-edit-menu/dso-edit-menu.component';
 
 @Component({
   selector: 'ds-themed-item-page-title-field',
@@ -9,7 +10,7 @@ import { ItemPageTitleFieldComponent as BaseComponent } from '../../../../../../
   standalone: true,
   imports: [
     TranslateModule,
-    ItemPageNavbarComponent,
+    ItemPageNavbarComponent, DsoEditMenuComponent
   ],
 })
 export class ItemPageTitleFieldComponent extends BaseComponent {

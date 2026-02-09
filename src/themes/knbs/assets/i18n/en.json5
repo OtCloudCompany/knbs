@@ -4,62 +4,77 @@
   "cartographicentity.listelement.badge": "Cartographic Entity",
   "cartographicentity.page.titleprefix":"Cartographic Entity",
   "cartographicentity.page.edit":"Edit this Cartographic Entity",
+  "statisticalabstract.page.options":"Abstract Options",
     
   "auditreport.listelement.badge": "Audit Report",
   "auditreport.page.titleprefix":"Audit Report",
   "auditreport.page.edit":"Edit this Audit Report", 
+  "auditreport.page.options":"Report Options",
 
   "retirementscheme.listelement.badge": "Retirement Scheme",
   "retirementscheme.page.titleprefix":"Retirement Scheme",
   "retirementscheme.page.edit":"Edit this Retirement Scheme",
-  
+  "retirementscheme.page.options":"Scheme Options",
+
   "hrdocument.listelement.badge": "HR Document",
   "hrdocument.page.titleprefix":"HR Document",
   "hrdocument.page.edit":"Edit this HR Document",
+  "hrdocument.page.options":"Document Options",
     
   "hrinstrument.listelement.badge": "HR Instrument",
   "hrinstrument.page.titleprefix":"HR Instrument",
   "hrinstrument.page.edit":"Edit this HR Instrument",
+  "hrinstrument.page.options":"Instrument Options",
   
   "policydocument.listelement.badge": "Policy Document",
   "policydocument.page.titleprefix":"Policy Document",
   "policydocument.page.edit":"Edit this Policy Document",
+  "policydocument.page.options":"Document Options",
 
   "pressrelease.listelement.badge": "Press Release",
   "pressrelease.page.titleprefix":"Press Release",
   "pressrelease.page.edit":"Edit this Press Release",
+  "pressrelease.page.options":"Release Options",
 
   "multimedia.listelement.badge": "Multimedia",
   "multimedia.page.titleprefix":"Multimedia",
   "multimedia.page.edit":"Edit this Multimedia",
+  "multimedia.page.options":"Multimedia Options",
 
   "communicationmaterial.listelement.badge": "Communication Material",
   "communicationmaterial.page.titleprefix":"Communication Material",
   "communicationmaterial.page.edit":"Edit this Communication Material",
+  "communicationmaterial.page.options":"Material Options",
 
   "statisticalreport.listelement.badge": "Statistical Report",
   "statisticalreport.page.titleprefix":"Statistical Report",
   "statisticalreport.page.edit":"Edit this Report",
+  "statisticalreport.page.options":"Report Options",
 
   "statisticalabstract.listelement.badge": "Statistical Abstract",
   "statisticalabstract.page.titleprefix":"Statistical Abstract",
   "statisticalabstract.page.edit":"Edit this Abstract",
+  "statisticalabstract.page.options":"Abstract Options",
 
   "statisticalrelease.listelement.badge": "Statistical Release",
   "statisticalrelease.page.titleprefix":"Statistical Release",
   "statisticalrelease.page.edit":"Edit this Release",
+  "statisticalrelease.page.options":"Release Options",
 
   "economicsurvey.listelement.badge": "Economic Survey",
   "economicsurvey.page.titleprefix":"Economic Survey",
   "economicsurvey.page.edit":"Edit this Survey",
+  "economicsurvey.page.options":"Survey Options",
 
   "censusreport.listelement.badge": "Census Report",
   "censusreport.page.titleprefix":"Census Report",
   "censusreport.page.edit":"Edit this Report",
+  "censusreport.page.options":"Report Options",
  
   "manual.listelement.badge": "Manual",
   "manual.page.titleprefix":"Manual",
   "manual.page.edit":"Edit this Manual",
+  "manual.page.options":"Manual Options",
 
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 
@@ -1855,7 +1870,7 @@
 
   "dso-selector.set-scope.community.head": "Select a search scope",
 
-  "dso-selector.set-scope.community.button": "Search all of DSpace",
+  "dso-selector.set-scope.community.button": "Search entire repository",
 
   "dso-selector.set-scope.community.or-divider": "or",
 
@@ -2023,11 +2038,11 @@
 
   "file-section.error.header": "Error obtaining files for this item",
 
-  "footer.copyright": "copyright © 2002-{{ year }}",
+  "footer.copyright": "Copyright © {{ year }}",
 
   "footer.link.accessibility": "Accessibility settings",
 
-  "footer.link.dspace": "DSpace software",
+  "footer.link.dspace": "Kenya National Bureau of Statistics (KNBS),",
 
   "footer.link.lyrasis": "LYRASIS",
 
@@ -3457,7 +3472,7 @@
 
   "login.form.forgot-password": "Have you forgotten your password?",
 
-  "login.form.header": "Please log in to DSpace",
+  "login.form.header": "Please log in",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -3517,7 +3532,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "Explore Repository",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -3753,7 +3768,7 @@
 
   "notification.suggestion.please": "Please",
 
-  "nav.browse.header": "All of DSpace",
+  "nav.browse.header": "Explore Repository",
 
   "nav.community-browse.header": "By Community",
 
@@ -4932,9 +4947,9 @@
 
   "search.form.search": "Search",
 
-  "search.form.search_dspace": "All repository",
+  "search.form.search_dspace": "Entire repository",
 
-  "search.form.scope.all": "All of DSpace",
+  "search.form.scope.all": "Search entire repository",
 
   "search.results.head": "Search Results",
 

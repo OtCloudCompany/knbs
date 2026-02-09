@@ -9,6 +9,10 @@
     --knbs-gray: #e9ecef;
 }
 
+.bg-brown {
+    background-color: var(--knbs-brown) !important;
+}
+
 .bg-light-brown {
     background-color: var(--knbs-light-brown) !important;
 }
@@ -25,11 +29,13 @@
     color: var(--knbs-brown) !important;
 }
 
-.bg-brown {
+.btn-primary {
     background-color: var(--knbs-brown) !important;
+    border-color: var(--knbs-brown) !important;
+    color: #fff !important;
 }
 
-.btn-primary {
+.dso-edit-menu .btn-dark {
     background-color: var(--knbs-brown) !important;
     border-color: var(--knbs-brown) !important;
     color: #fff !important;

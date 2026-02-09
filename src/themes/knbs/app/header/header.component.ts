@@ -13,9 +13,8 @@ import { ImpersonateNavbarComponent } from '../../../../app/shared/impersonate-n
 
 @Component({
   selector: 'ds-themed-header',
-  styleUrls: ['../../../../app/header/header.component.scss'],
+  styleUrls: ['./header.component.scss'],
   templateUrl: 'header.component.html',
-  // templateUrl: '../../../../app/header/header.component.html',
   imports: [
     AsyncPipe,
     ContextHelpToggleComponent,
