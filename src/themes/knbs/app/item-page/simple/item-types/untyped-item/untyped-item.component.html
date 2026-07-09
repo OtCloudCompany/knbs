@@ -28,6 +28,8 @@
         <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.citation']"
             [label]="'item.page.citation'">
         </ds-generic-item-page-field>
+        <ds-map-visualization [item]="object"></ds-map-visualization>
+
         @if (geospatialItemPageFieldsEnabled) {
         <ds-geospatial-item-page-field [item]="object" [label]="'item.page.places'" [pointFields]="['dcterms.spatial']"
             [bboxFields]="['dcterms.spatial']" [cluster]="true">
@@ -35,7 +37,6 @@
         }
         <ds-item-page-uri-field [item]="object" [fields]="['dc.identifier.uri']" [label]="'item.page.uri'">
         </ds-item-page-uri-field>
-        <ds-map-visualization [item]="object"></ds-map-visualization>
         <ds-item-page-collections [item]="object"></ds-item-page-collections>
 
         <ds-item-page-cc-license-field [item]="object" [variant]="'full'">

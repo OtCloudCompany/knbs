@@ -21,7 +21,9 @@
       {{ 'item.page.map-visualization.error' | translate }}
     </div>
     }
-    <div class="map-visualization-canvas" [class.d-none]="mapLoading || mapError"></div>
+    <div class="map-visualization-canvas" [class.d-none]="mapLoading || mapError">
+      <ds-geospatial-map #geospatialMap></ds-geospatial-map>
+    </div>
   </div>
   }
 </ds-metadata-field-wrapper>

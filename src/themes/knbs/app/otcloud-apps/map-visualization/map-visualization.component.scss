@@ -1,6 +1,13 @@
 .map-visualization-wrapper {
   .map-visualization-canvas {
-    height: 400px;
     width: 100%;
+
+    // ds-geospatial-map's default "item" layout is a fixed-width card (max 700px), sized for a
+    // metadata sidebar field. Stretch it to fill the width available here instead of overriding
+    // the shared component itself.
+    ::ng-deep .map-container {
+      width: 100% !important;
+      height: 400px !important;
+    }
   }
 }
