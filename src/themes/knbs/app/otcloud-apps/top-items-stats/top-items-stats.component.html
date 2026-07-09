@@ -1,0 +1,217 @@
+<div class="container">
+  <div class="top-stats-card card my-4">
+    <div class="card-header d-flex justify-content-between align-items-center py-3">
+      <h5 class="mb-0 d-flex align-items-center text-primary fw-bold">
+        <i class="fas fa-chart-bar me-2 text-warning fs-4 animate-pulse"></i>
+        {{ "item.page.topItems.title" | translate:{name: resolvedObjectName || ''} }}
+      </h5>
+      <div class="d-flex align-items-center gap-2" *ngIf="totalElements > 0">
+        <span class="badge bg-light text-secondary border fw-normal">
+          {{ totalElements }} {{ "item.page.topItems.total" | translate }}
+        </span>
+        <button class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1"
+          (click)="downloadCSV()"
+          [title]="'item.page.topItems.downloadCsv' | translate"
+          [attr.aria-label]="'item.page.topItems.downloadCsv' | translate"
+          type="button">
+          <i class="fas fa-download"></i> CSV
+        </button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <!-- Filter Form -->
+      <form [formGroup]="filterForm" (ngSubmit)="onSubmit()"
+        class="filter-form mb-4 p-3 bg-light rounded shadow-xs border">
+        <div class="row align-items-end g-3">
+          <!-- Start Date -->
+          <div class="col-12 col-md-2">
+            <label for="startDate" class="form-label small fw-semibold text-secondary mb-1">
+              <i class="fas fa-calendar-alt me-1"></i>{{ "item.page.topItems.startDate" | translate }}
+            </label>
+            <div class="input-group input-group-sm">
+              <input id="startDate" class="form-control" placeholder="yyyy-mm-dd" formControlName="startDate"
+                ngbDatepicker #dStart="ngbDatepicker" (click)="dStart.toggle()" />
+            </div>
+          </div>
+
+          <!-- End Date -->
+          <div class="col-12 col-md-2">
+            <label for="endDate" class="form-label small fw-semibold text-secondary mb-1">
+              <i class="fas fa-calendar-check me-1"></i>{{ "item.page.topItems.endDate" | translate }}
+            </label>
+            <div class="input-group input-group-sm">
+              <input id="endDate" class="form-control" placeholder="yyyy-mm-dd" formControlName="endDate" ngbDatepicker
+                #dEnd="ngbDatepicker" (click)="dEnd.toggle()" />
+            </div>
+          </div>
+
+          <!-- Page Size Selector -->
+          <div class="col-12 col-md-2">
+            <label for="size" class="form-label small fw-semibold text-secondary mb-1">
+              <i class="fas fa-list-ol me-1"></i>{{ "item.page.topItems.perPage" | translate }}
+            </label>
+            <select id="size" class="form-select form-select-sm" formControlName="size"
+              (change)="onPageSizeChange($event)">
+              <option [value]="5">5</option>
+              <option [value]="10">10</option>
+              <option [value]="20">20</option>
+              <option [value]="50">50</option>
+              <option [value]="100">100</option>
+            </select>
+          </div>
+
+          <!-- Form Buttons -->
+          <div class="col-12 col-md-3 d-flex gap-2 justify-content-md-end">
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm flex-fill d-flex align-items-center justify-content-center"
+              (click)="onReset()">
+              <i class="fas fa-undo me-1"></i>{{ "item.page.topItems.reset" | translate }}
+            </button>
+            <button type="submit"
+              class="btn btn-primary btn-sm flex-fill d-flex align-items-center justify-content-center gradient-btn">
+              <i class="fas fa-filter me-1"></i>{{ "item.page.topItems.filter" | translate }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Date Range Validation Warning -->
+        <div *ngIf="validationError"
+          class="alert alert-warning alert-dismissible fade show mt-2 mb-0 py-2 px-3 small border-0 shadow-xs"
+          role="alert">
+          <i class="fas fa-exclamation-triangle me-1"></i> {{ validationError }}
+        </div>
+      </form>
+
+      <!-- Error State -->
+      <div *ngIf="errorMessage" class="alert alert-danger d-flex align-items-center p-3 mb-4 rounded border-0 shadow-xs"
+        role="alert">
+        <i class="fas fa-exclamation-circle fs-5 me-2"></i>
+        <div>{{ errorMessage }}</div>
+      </div>
+
+      <!-- Loading Skeleton State -->
+      <div *ngIf="isLoading" class="skeleton-wrapper py-3">
+        <div class="skeleton-row mb-3" *ngFor="let i of [1, 2, 3]">
+          <div class="skeleton-block block-rank animate-pulse"></div>
+          <div class="skeleton-block block-title animate-pulse"></div>
+          <div class="skeleton-block block-bar animate-pulse"></div>
+          <div class="skeleton-block block-bar animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- Data Display Table -->
+      <div *ngIf="!isLoading && !errorMessage" class="table-responsive shadow-xs border rounded bg-white">
+        <table class="table table-hover align-middle mb-0 custom-stats-table">
+          <thead class="bg-light border-bottom">
+            <tr>
+              <th scope="col" class="text-center" style="width: 70px;">#</th>
+              <th scope="col" style="min-width: 250px;">{{ "item.page.topItems.itemLabel" | translate }}</th>
+              <th scope="col" style="width: 200px;">{{ "item.page.topItems.views" | translate }}</th>
+              <th scope="col" style="width: 200px;">{{ "item.page.topItems.downloads" | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Empty State -->
+            <tr *ngIf="allStatsContent.length === 0">
+              <td colspan="4" class="text-center py-5 text-muted">
+                <i class="fas fa-folder-open fs-1 mb-3 text-secondary d-block"></i>
+                <span class="fs-6">{{ "item.page.topItems.noData" | translate }}</span>
+              </td>
+            </tr>
+
+            <!-- Data Rows -->
+            <tr *ngFor="let item of displayedStatsContent; let idx = index">
+              <!-- Rank -->
+              <td class="text-center font-monospace fw-bold text-secondary">
+                {{ (currentPage * pageSize) + idx + 1 }}
+              </td>
+
+              <!-- Item Title (Router Link) -->
+              <td>
+                <a [routerLink]="['/items', item.id]"
+                  class="text-dark fw-semibold text-decoration-none hover-link text-wrap block-title-text">
+                  {{ item.label }}
+                </a>
+              </td>
+
+              <!-- Views Badge -->
+              <td>
+                <span class="badge bg-primary-soft text-primary-dark rounded-pill py-1 px-2 small font-monospace">
+                  <i class="fas fa-eye me-1"></i>{{ item.views }}
+                </span>
+              </td>
+
+              <!-- Downloads Badge -->
+              <td>
+                <span class="badge bg-success-soft text-success-dark rounded-pill py-1 px-2 small font-monospace">
+                  <i class="fas fa-download me-1"></i>{{ item.downloads }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination Footer -->
+      <div *ngIf="!isLoading && !errorMessage && totalElements > 0"
+        class="d-flex flex-wrap justify-content-between align-items-center mt-3 pt-3 border-top gap-3">
+        <!-- Showing Entries Label -->
+        <div class="text-secondary small">
+          {{ "item.page.topItems.showing" | translate }}
+          <strong>{{ (currentPage * pageSize) + 1 }}</strong>
+          {{ "item.page.topItems.to" | translate }}
+          <strong>{{ (currentPage * pageSize) + displayedStatsContent.length }}</strong>
+          {{ "item.page.topItems.of" | translate }}
+          <strong>{{ totalElements }}</strong>
+          {{ "item.page.topItems.entries" | translate }}
+        </div>
+
+        <!-- Pagination Buttons -->
+        <nav aria-label="Top Items Statistics Page Navigation" *ngIf="totalPages > 1">
+          <ul class="pagination pagination-sm mb-0 gap-1">
+            <!-- First -->
+            <li class="page-item" [class.disabled]="currentPage === 0">
+              <button class="page-link border-0 rounded" (click)="onPageChange(0)" aria-label="First page"
+                type="button">
+                <i class="fas fa-angle-double-left"></i>
+              </button>
+            </li>
+            <!-- Previous -->
+            <li class="page-item" [class.disabled]="currentPage === 0">
+              <button class="page-link border-0 rounded" (click)="onPageChange(currentPage - 1)"
+                aria-label="Previous page" type="button">
+                <i class="fas fa-angle-left"></i>
+              </button>
+            </li>
+
+            <!-- Dynamic Page Numbers -->
+            <ng-container *ngFor="let p of getPagesArray(); let index = index">
+              <li class="page-item" [class.active]="currentPage === p">
+                <button class="page-link border-0 rounded" (click)="onPageChange(p)" type="button">
+                  {{ p + 1 }}
+                </button>
+              </li>
+            </ng-container>
+
+            <!-- Next -->
+            <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+              <button class="page-link border-0 rounded" (click)="onPageChange(currentPage + 1)" aria-label="Next page"
+                type="button">
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </li>
+            <!-- Last -->
+            <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+              <button class="page-link border-0 rounded" (click)="onPageChange(totalPages - 1)" aria-label="Last page"
+                type="button">
+                <i class="fas fa-angle-double-right"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+</div>

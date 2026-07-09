@@ -5,8 +5,8 @@
             {{'home.top-level-communities.head' | translate}}
         </h3>
         <p class="lead">{{'home.top-level-communities.help' | translate}}</p>
-        <div class="row justify-content-between" *ngIf="communitiesFetched?.length > 0">
-            <div class="col-md-2 col-sm-6 my-2 px-sm-4 d-flex" *ngFor="let community of communitiesFetched">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3 top-level-community-row" *ngIf="communitiesFetched?.length > 0">
+            <div class="d-flex top-level-community-col" *ngFor="let community of communitiesFetched">
                 <div class="card bg-light h-100 d-flex flex-column w-100">
                     <div class="card-body p-md-2 d-flex flex-column text-center h-100">
                         <a routerLink="/communities/{{ community.uuid }}" class="flex-grow-1 text-decoration-none">

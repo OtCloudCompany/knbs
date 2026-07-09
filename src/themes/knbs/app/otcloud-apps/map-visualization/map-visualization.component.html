@@ -1,0 +1,28 @@
+@if (mapBitstreams.length > 0) {
+<ds-metadata-field-wrapper [hideIfNoTextContent]="false" [label]="'item.page.map-visualization.label' | translate">
+  <div class="d-flex flex-wrap gap-2 mb-2">
+    @for (bitstream of mapBitstreams; track bitstream.id) {
+    <button type="button" class="btn btn-outline-primary btn-sm" (click)="toggleMap(bitstream)">
+      <i class="fas fa-map-marked-alt me-1" aria-hidden="true"></i>
+      {{ (activeBitstream?.id === bitstream.id ? 'item.page.map-visualization.hide' : 'item.page.map-visualization.view') | translate }}
+      @if (mapBitstreams.length > 1) {
+      <span class="ms-1">({{ bitstream.name }})</span>
+      }
+    </button>
+    }
+  </div>
+  @if (activeBitstream) {
+  <div class="map-visualization-wrapper">
+    @if (mapLoading) {
+    <ds-loading [message]="'item.page.map-visualization.loading' | translate"></ds-loading>
+    }
+    @if (mapError) {
+    <div class="alert alert-danger" role="alert">
+      {{ 'item.page.map-visualization.error' | translate }}
+    </div>
+    }
+    <div class="map-visualization-canvas" [class.d-none]="mapLoading || mapError"></div>
+  </div>
+  }
+</ds-metadata-field-wrapper>
+}

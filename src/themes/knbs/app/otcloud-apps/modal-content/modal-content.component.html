@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{"item.page.citeThisItem" | translate}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <h4>{{title}}</h4>
+    <div class="form-row my-4 bg-unapec-light-blue px-2 py-1 rounded">
+        <div class="col">
+            <label for="citationSelect" class="text-white">
+                <h5 class="mb-0 pt-2">{{ "item.page.selectFormat" | translate }} : </h5>
+            </label>
+        </div>
+        <div class="col">
+            <select class="form-control border-0" id="citationSelect" [(ngModel)]="selectedCitation"
+                (change)="updateCitation()">
+                <option value="APA">APA</option>
+                <option value="MLA">MLA</option>
+                <option value="Harvard">Harvard</option>
+                <option value="Vancouver">Vancouver</option>
+                <option value="iso690-2">ISO 690-2</option>
+                <option value="Chicago">Chicago</option>
+            </select>
+        </div>
+    </div>
+    <div class="bg-light p-2 rounded">
+        <div [innerHTML]="currentCitation"></div>
+        <div class="d-flex justify-content-end mt-1">
+            <button class="btn btn-sm btn-link text-secondary p-0"
+                [title]="copied ? 'Copied!' : 'Copy to clipboard'" (click)="copyToClipboard()">
+                <i class="fas" [ngClass]="copied ? 'fa-check text-success' : 'fa-copy'"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn bg-unapec-gold text-white" (click)="activeModal.close('Close click')">Cerrar
+    </button>
+</div>

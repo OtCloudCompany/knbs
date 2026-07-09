@@ -1,0 +1,12 @@
+@if (item?.firstMetadataValue('dc.description.abstract'); as abstract) {
+<div class="simple-view-element">
+    <ds-truncatable [showToggle]="true" [id]="'abstractOuter'">
+        <h5 class="simple-view-element-header">Abstract</h5>
+        <div class="justify-content-end mb-4 itempage-abstract">
+            <ds-truncatable-part [minLines]="4" [id]="'abstractOuter'">
+                {{ abstract | stripLineBreaks }}
+            </ds-truncatable-part>
+        </div>
+    </ds-truncatable>
+</div>
+}

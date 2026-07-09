@@ -1,0 +1,201 @@
+{
+  "classification": "Classification of Statistical Activities (CSA), Version 2.1",
+  "source": "United Nations Statistics Division, White cover version, 20 January 2026",
+  "mapping": {
+    "domain": "DSpace top-level community",
+    "activity_with_children": "DSpace sub-community",
+    "activity_leaf": "DSpace collection under domain community",
+    "third_level_category": "DSpace collection under sub-community"
+  },
+  "communities": [
+    {
+      "code": "1",
+      "name": "Domain 1 - Demographic and social statistics",
+      "sub_communities": [],
+      "collections": [
+        { "code": "101", "name": "101 Population" },
+        { "code": "102", "name": "102 Migration" },
+        { "code": "103", "name": "103 Labour" },
+        { "code": "104", "name": "104 Education" },
+        { "code": "105", "name": "105 Health" },
+        { "code": "106", "name": "106 Income and consumption" },
+        { "code": "107", "name": "107 Social protection" },
+        { "code": "108", "name": "108 Human settlements and housing" },
+        { "code": "109", "name": "109 Culture" },
+        { "code": "110", "name": "110 Time-Use" },
+        { "code": "199", "name": "199 Demographic and social statistics, n.e.c." }
+      ]
+    },
+    {
+      "code": "2",
+      "name": "Domain 2 - Economic statistics",
+      "sub_communities": [
+        {
+          "code": "201",
+          "name": "201 Macroeconomic accounts and statistics",
+          "collections": [
+            { "code": "20101", "name": "20101 System of National Accounts" },
+            { "code": "20102", "name": "20102 Balance of payments and international investment position" },
+            { "code": "20103", "name": "20103 Government finance statistics" },
+            { "code": "20104", "name": "20104 Monetary and financial statistics" },
+            { "code": "20105", "name": "20105 System of Environmental-Economic Accounting" },
+            { "code": "20199", "name": "20199 Macroeconomic accounts and statistics, n.e.c." }
+          ]
+        },
+        {
+          "code": "202",
+          "name": "202 Business statistics",
+          "collections": [
+            { "code": "20201", "name": "20201 Short-term business statistics" },
+            { "code": "20202", "name": "20202 Structural business statistics" },
+            { "code": "20203", "name": "20203 Business demography and business dynamics" },
+            { "code": "20204", "name": "20204 Entrepreneurship" },
+            { "code": "20205", "name": "20205 Multinational enterprise statistics" },
+            { "code": "20299", "name": "20299 Business statistics, n.e.c." }
+          ]
+        },
+        {
+          "code": "203",
+          "name": "203 Sectoral statistics",
+          "collections": [
+            { "code": "20301", "name": "20301 Agriculture, forestry and fishing" },
+            { "code": "20302", "name": "20302 Energy" },
+            { "code": "20303", "name": "20303 Mining, manufacturing and construction" },
+            { "code": "20304", "name": "20304 Transport" },
+            { "code": "20305", "name": "20305 Tourism" },
+            { "code": "20306", "name": "20306 Banking, insurance and financial market statistics" },
+            { "code": "20307", "name": "20307 Wholesale and retail trade" },
+            { "code": "20399", "name": "20399 Sectoral statistics, n.e.c." }
+          ]
+        }
+      ],
+      "collections": [
+        { "code": "204", "name": "204 International trade" },
+        { "code": "205", "name": "205 Prices" },
+        { "code": "206", "name": "206 Science, technology and innovation" },
+        { "code": "299", "name": "299 Economic statistics, n.e.c." }
+      ]
+    },
+    {
+      "code": "3",
+      "name": "Domain 3 - Environment statistics",
+      "sub_communities": [],
+      "collections": [
+        { "code": "301", "name": "301 Environmental conditions and quality" },
+        { "code": "302", "name": "302 Environmental resources and their use" },
+        { "code": "303", "name": "303 Residuals" },
+        { "code": "304", "name": "304 Hazardous events and disasters" },
+        { "code": "305", "name": "305 Human settlements and environmental health" },
+        { "code": "306", "name": "306 Environmental protection, management and engagement" },
+        { "code": "399", "name": "399 Environment statistics, n.e.c." }
+      ]
+    },
+    {
+      "code": "4",
+      "name": "Domain 4 - Governance statistics",
+      "sub_communities": [
+        {
+          "code": "408",
+          "name": "408 Safety and security",
+          "collections": [
+            { "code": "40801", "name": "40801 Crime and criminal justice" },
+            { "code": "40899", "name": "40899 Safety and security statistics, n.e.c." }
+          ]
+        }
+      ],
+      "collections": [
+        { "code": "401", "name": "401 Non-discrimination and equality" },
+        { "code": "402", "name": "402 Participation" },
+        { "code": "403", "name": "403 Openness" },
+        { "code": "404", "name": "404 Access to and quality of justice" },
+        { "code": "405", "name": "405 Responsiveness" },
+        { "code": "406", "name": "406 Absence of corruption" },
+        { "code": "407", "name": "407 Trust" },
+        { "code": "499", "name": "499 Governance statistics, n.e.c." }
+      ]
+    },
+    {
+      "code": "5",
+      "name": "Domain 5 - Cross-cutting statistics",
+      "sub_communities": [
+        {
+          "code": "511",
+          "name": "511 Food security and nutrition",
+          "collections": [
+            { "code": "51101", "name": "51101 Food availability and access" },
+            { "code": "51102", "name": "51102 Diets and nutrition" }
+          ]
+        }
+      ],
+      "collections": [
+        { "code": "501", "name": "501 Sustainable development" },
+        { "code": "502", "name": "502 Human rights" },
+        { "code": "503", "name": "503 Gender statistics" },
+        { "code": "504", "name": "504 Special population groups" },
+        { "code": "505", "name": "505 Living conditions and poverty" },
+        { "code": "506", "name": "506 Climate change" },
+        { "code": "507", "name": "507 Regional and small area statistics" },
+        { "code": "508", "name": "508 Information society and digitalization" },
+        { "code": "509", "name": "509 Circular economy" },
+        { "code": "510", "name": "510 Social and solidarity economy" },
+        { "code": "599", "name": "599 Cross-cutting statistics, n.e.c." }
+      ]
+    },
+    {
+      "code": "6",
+      "name": "Domain 6 - Statistical infrastructure and methodology",
+      "sub_communities": [
+        {
+          "code": "603",
+          "name": "603 Statistical registers",
+          "collections": [
+            { "code": "60301", "name": "60301 Statistical business registers" },
+            { "code": "60302", "name": "60302 Registers of population" },
+            { "code": "60303", "name": "60303 Registers of dwellings and buildings" },
+            { "code": "60304", "name": "60304 Agricultural registers" },
+            { "code": "60399", "name": "60399 Statistical registers, n.e.c." }
+          ]
+        },
+        {
+          "code": "604",
+          "name": "604 Data sources",
+          "collections": [
+            { "code": "60401", "name": "60401 Population and housing censuses" },
+            { "code": "60402", "name": "60402 Business and agricultural censuses" },
+            { "code": "60403", "name": "60403 Household and individual surveys" },
+            { "code": "60404", "name": "60404 Business and agricultural surveys" },
+            { "code": "60405", "name": "60405 Administrative sources" },
+            { "code": "60499", "name": "60499 Data sources, n.e.c." }
+          ]
+        }
+      ],
+      "collections": [
+        { "code": "601", "name": "601 Metadata" },
+        { "code": "602", "name": "602 Classifications" },
+        { "code": "605", "name": "605 Data exchange and data sharing" },
+        { "code": "606", "name": "606 Data processing and analysis" },
+        { "code": "607", "name": "607 Data science" },
+        { "code": "608", "name": "608 Geospatial data" },
+        { "code": "609", "name": "609 Statistical confidentiality and disclosure protection" },
+        { "code": "610", "name": "610 Data dissemination and communication" },
+        { "code": "699", "name": "699 Statistical infrastructure and methodology, n.e.c." }
+      ]
+    },
+    {
+      "code": "7",
+      "name": "Domain 7 - Strategic and managerial activities",
+      "sub_communities": [],
+      "collections": [
+        { "code": "701", "name": "701 Institutional frameworks and principles; role and organization of official statistics" },
+        { "code": "702", "name": "702 National statistical coordination" },
+        { "code": "703", "name": "703 Quality management" },
+        { "code": "704", "name": "704 Management of human resources" },
+        { "code": "705", "name": "705 Management of IT, information and knowledge" },
+        { "code": "706", "name": "706 Management of other resources" },
+        { "code": "707", "name": "707 International statistical coordination" },
+        { "code": "708", "name": "708 Capacity development" },
+        { "code": "799", "name": "799 Strategic and managerial activities, n.e.c." }
+      ]
+    }
+  ]
+}

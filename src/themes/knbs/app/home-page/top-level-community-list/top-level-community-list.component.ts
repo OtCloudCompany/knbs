@@ -26,7 +26,7 @@ interface FetchedCommunity {
 
 @Component({
   selector: 'ds-themed-top-level-community-list',
-  styleUrls: ['../../../../../app/home-page/top-level-community-list/top-level-community-list.component.scss'],
+  styleUrls: ['./top-level-community-list.component.scss'],
   templateUrl: './top-level-community-list.component.html',
   imports: [
     AsyncPipe,
@@ -41,12 +41,13 @@ interface FetchedCommunity {
 export class TopLevelCommunityListComponent extends BaseComponent implements OnInit {
   communitiesFetched: FetchedCommunity[] = [];
   featuredCommunities: { [key: string]: string } = {
-    'edabef7e-8819-4cf8-877d-7c4c4fd70043': 'fa-address-card',
-    '188cee0e-d8a0-4889-a5a9-f5a2b71b87d7': 'fa-area-chart',
-    '6ed8c658-6db1-4167-8e84-838567d90fa3': 'fa-book',
-    '1d7c2a34-691d-46be-bf79-339d7c92f4d4': 'fa-line-chart',
-    'fd2daf80-57ed-44bc-b8a8-22df0adb4036': 'fa-university',
-    'd13c04ec-65fb-4afd-b23e-91e33fbaa660': 'fa-chart-area',
+    '949a1deb-7ede-41c2-bdb0-502b975b243a': 'fa-address-card',
+    '6d91d629-16a0-4f2b-814b-36f715a7f27f': 'fa-area-chart',
+    '1d3a637d-cdd7-49de-b58b-fce48472d90a': 'fa-book',
+    '9c0cc1c9-f7d6-44f9-8820-f27ec0d5b6c7': 'fa-line-chart',
+    'c2bbbf97-d7b4-4bfa-a628-88c2da6cc159': 'fa-university',
+    'b335bbd1-8ba9-4849-bd27-dde239a3ac74': 'fa-chart-area',
+    '0306369a-cc99-40fa-8894-9a1bf500b99b': 'fa-window-restore',
   };
 
   constructor(@Inject(APP_CONFIG) protected appConfig: AppConfig,
@@ -69,33 +70,22 @@ export class TopLevelCommunityListComponent extends BaseComponent implements OnI
         // Step 2: Convert the filtered communities into the desired format
         const mappedCommunities = filteredCommunities.map((community) => {
           return {
-            name: community.name,
+            name: community.name.replace(/^\d+\s*-\s*/, ''),
             uuid: community.uuid,
             logo: community.uuid,
             itemsCount: community.archivedItemsCount > 0 ? community.archivedItemsCount : 0,
           };
         });
 
-        // Step 3: Sort the communities based on the order in featuredCommunities
-        // Since the values are now strings (icons), we need a different sorting strategy or keep the original map for sorting.
-        // Wait, the original map values assumed numbers for sorting? NO, the previous code had:
-        // '...': 1, '...': 2 ...
-        // But the user changed it to:
-        // '...': 'fa-address-card', ...
-        // So the sorting logic: `featuredCommunities[a.uuid] - featuredCommunities[b.uuid]` is now broken because you can't subtract strings.
-        // I should probably fix the sorting too, but let's first fix the compilation error.
-        // Actually, I can just use the keys order if I wanted, or maybe the user intends to sort by name?
-        // Let's assume for now that the user might have broken the sorting logic with their change.
-        // However, I must fix the variable access first. `this.featuredCommunities`
-
         // Use a predefined order array for sorting based on the keys
         const order = [
-          'edabef7e-8819-4cf8-877d-7c4c4fd70043',
-          '188cee0e-d8a0-4889-a5a9-f5a2b71b87d7',
-          '6ed8c658-6db1-4167-8e84-838567d90fa3',
-          '1d7c2a34-691d-46be-bf79-339d7c92f4d4',
-          'fd2daf80-57ed-44bc-b8a8-22df0adb4036',
-          'd13c04ec-65fb-4afd-b23e-91e33fbaa660'
+          '949a1deb-7ede-41c2-bdb0-502b975b243a',
+          '6d91d629-16a0-4f2b-814b-36f715a7f27f',
+          '1d3a637d-cdd7-49de-b58b-fce48472d90a',
+          '9c0cc1c9-f7d6-44f9-8820-f27ec0d5b6c7',
+          'c2bbbf97-d7b4-4bfa-a628-88c2da6cc159',
+          'b335bbd1-8ba9-4849-bd27-dde239a3ac74',
+          '0306369a-cc99-40fa-8894-9a1bf500b99b'
         ];
 
         const sortedCommunities = mappedCommunities.sort((a, b) => {

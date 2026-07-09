@@ -3000,6 +3000,16 @@
 
   "item.page.link.simple": "Simple item page",
 
+  "item.page.map-visualization.label": "Map",
+
+  "item.page.map-visualization.view": "View Map",
+
+  "item.page.map-visualization.hide": "Hide Map",
+
+  "item.page.map-visualization.loading": "Loading map...",
+
+  "item.page.map-visualization.error": "Unable to load the map for this file.",
+
   "item.page.options": "Options",
 
   "item.page.orcid.title": "ORCID",
@@ -3546,7 +3556,7 @@
 
   "menu.section.browse_global_by_title": "By Title",
 
-  "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.browse_global_communities_and_collections": "Statistical Collections",
 
   "menu.section.browse_global_geospatial_map": "By Geolocation (Map)",
 

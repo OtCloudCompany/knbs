@@ -27,6 +27,7 @@ import { MetadataFieldWrapperComponent } from '../../../../../../../app/shared/m
 import { listableObjectComponent } from '../../../../../../../app/shared/object-collection/shared/listable-object/listable-object.decorator';
 import { ThemedResultsBackButtonComponent } from '../../../../../../../app/shared/results-back-button/themed-results-back-button.component';
 import { ThemedThumbnailComponent } from '../../../../../../../app/thumbnail/themed-thumbnail.component';
+import { MapVisualizationComponent } from '../../../../otcloud-apps/map-visualization/map-visualization.component';
 
 @listableObjectComponent(Item, ViewMode.StandalonePage, Context.Any, 'knbs')
 @Component({
@@ -47,6 +48,7 @@ import { ThemedThumbnailComponent } from '../../../../../../../app/thumbnail/the
     ItemPageCcLicenseFieldComponent,
     ItemPageDateFieldComponent,
     ItemPageUriFieldComponent,
+    MapVisualizationComponent,
     MetadataFieldWrapperComponent,
     MiradorViewerComponent,
     RouterLink,

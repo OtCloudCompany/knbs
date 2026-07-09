@@ -1,0 +1,12 @@
+@if (item?.firstMetadataValue('dc.description'); as description) {
+<div class="simple-view-element">
+    <ds-truncatable [showToggle]="true" [id]="'descriptionOuter'">
+        <h5 class="simple-view-element-header">Descripción</h5>
+        <div class="justify-content-end mb-4 itempage-description">
+            <ds-truncatable-part [minLines]="4" [id]="'descriptionOuter'">
+                {{ description | stripLineBreaks }}
+            </ds-truncatable-part>
+        </div>
+    </ds-truncatable>
+</div>
+}

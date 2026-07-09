@@ -1,0 +1,15 @@
+@if (reportsLoaded) {
+<section class="simple-view-element mb-3">
+    <h4 class="simple-view-element-header">{{ "item.page.usageMetrics" | translate }}</h4>
+    <div class="metrics-row d-flex gap-3">
+        <div aria-hidden="false" class="metric text-center">
+            <span class="metric-count badge rounded-pill bg-unapec-light-blue">{{ totalViews }} </span>
+            <span class="metric-name d-block"> views </span>
+        </div>
+        <div aria-hidden="false" class="metric text-center">
+            <span class="metric-count badge rounded-pill bg-unapec-light-blue">{{ totalDownloads }}</span>
+            <span class="metric-name d-block"> downloads </span>
+        </div>
+    </div>
+</section>
+}

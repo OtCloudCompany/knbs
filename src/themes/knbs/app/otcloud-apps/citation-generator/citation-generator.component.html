@@ -1,0 +1,43 @@
+@if (citationsLoaded) {
+<div class="d-grid gap-2">
+    <button class="btn btn-outline-primary text-white mb-3 align-items-center" (click)="modalOpen()">
+        <i class="fas fa-notes-medical"> </i>
+        {{ "item.page.citeThisItem" | translate }}
+    </button>
+</div>
+
+<div class="card mb-4" id="bibliographicManagers">
+    <div class="card-header">
+        <h5 class="card-title text-dark">{{ "item.page.bibliographicManagers" | translate }}</h5>
+    </div>
+    <div class="card-body">
+        <ul class="nav flex-column text-center">
+            <li class="nav-item border my-1">
+                <a class="nav-link" href="http://www.mendeley.com/import/?url={{ handleIdentifier }}" target="_blank">
+                    <img src="/assets/otcloud/images/mendeley.svg" alt="Mendeley">
+                </a>
+            </li>
+            <li class="nav-item border my-1">
+                <a class="nav-link" (click)="downloadCitation('endnote')">
+                    <img src="/assets/otcloud/images/endnote.png" alt="Endnote">
+                </a>
+            </li>
+            <li class="nav-item border my-1">
+                <a class="nav-link" (click)="downloadCitation('bibtex')">
+                    <img src="/assets/otcloud/images/bibtex.png" alt="BibText">
+                </a>
+            </li>
+            <li class="nav-item border my-1">
+                <a class="nav-link" (click)="downloadCitation('bibtex')">
+                    <img src="/assets/otcloud/images/zotero.png" alt="Zotero" class="zotero-img">
+                </a>
+            </li>
+            <li class="nav-item border my-1">
+                <a class="nav-link" (click)="downloadCitation('csv')">
+                    <img src="/assets/otcloud/images/csv.png" alt="CSV">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+}

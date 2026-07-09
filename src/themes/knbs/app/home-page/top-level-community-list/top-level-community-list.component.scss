@@ -1,0 +1,8 @@
+.top-level-community-row {
+  @media (min-width: 992px) {
+    > .top-level-community-col {
+      flex: 0 0 14.2857143%;
+      max-width: 14.2857143%;
+    }
+  }
+}
